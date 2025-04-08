@@ -16,7 +16,7 @@ It has not been used anywhere else for implementing the rearrange function.
 Design choices:
 - Ellipsis has been handled by replacing '...' with placeholders '_ex'. This helps in deciding shapes, number of axes, what to merge, and the order to transpose more easily.
 - The code decides the order of steps to be followed sequentially. These are always in the order:
- - demerge/split
- - transpose
- - repeat
- - merge
+ -- demerge/split
+ -- transpose
+ -- repeat
+ -- merge
