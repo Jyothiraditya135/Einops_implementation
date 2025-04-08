@@ -11,3 +11,12 @@ The einops library has been invoked in the implementation in the 2nd section, to
 where
 - b_x is the output from the custom rearrange function and
 - c_x is the output expected from appropriate einops function called.
+It has not been used anywhere else for implementing the rearrange function.
+
+Design choices:
+- Ellipsis has been handled by replacing '...' with placeholders '_ex'. This helps in deciding shapes, number of axes, what to merge, and the order to transpose more easily.
+- The code decides the order of steps to be followed sequentially. These are always in the order:
+ - demerge/split
+ - transpose
+ - repeat
+ - merge
